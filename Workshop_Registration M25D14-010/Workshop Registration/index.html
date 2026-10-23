@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Workshop Registration</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">LEARN · BUILD · CONNECT</p>
+      <h1>Workshop registration</h1>
+      <p class="intro">Complete the form to reserve your place at a workshop. Fields marked with * are required.</p>
+      <div class="stats"><div><strong id="workshop-count">4</strong><span>Workshops</span></div><div><strong id="registration-count">0</strong><span>Registrations</span></div><div><strong>16+</strong><span>Minimum age</span></div></div>
+    </header>
+
+    <section class="panel form-panel">
+      <div class="section-title"><div><p class="eyebrow">YOUR DETAILS</p><h2>Reserve your place</h2></div><span class="required-note">* Required</span></div>
+      <p id="notice" class="notice" role="status" aria-live="polite"></p>
+      <form id="registration-form" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="name">Full name *</label><input id="name" name="name" type="text" autocomplete="name" placeholder="e.g. Alex Okello" required><small class="error" id="name-error"></small></div>
+          <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required><small class="error" id="email-error"></small></div>
+          <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+256 700 000 000" required><small class="hint">Include your country code when needed.</small><small class="error" id="phone-error"></small></div>
+          <div class="field"><label for="date">Preferred date *</label><input id="date" name="date" type="date" required><small class="error" id="date-error"></small></div>
+          <div class="field"><label for="age">Age *</label><input id="age" name="age" type="number" min="16" max="100" step="1" placeholder="Your age" required><small class="error" id="age-error"></small></div>
+          <div class="field"><label for="workshop">Choose a workshop *</label><select id="workshop" name="workshop" required><option value="">Select a session</option></select><small class="error" id="workshop-error"></small></div>
+          <div class="field full"><label for="portfolio">Portfolio or website URL *</label><input id="portfolio" name="portfolio" type="url" placeholder="https://example.com" required><small class="hint">A portfolio, GitHub profile, or personal website.</small><small class="error" id="portfolio-error"></small></div>
+        </div>
+        <div class="form-footer"><p>Check your details before submitting.</p><button class="primary" type="submit">Complete registration <span aria-hidden="true">→</span></button></div>
+      </form>
+    </section>
+
+    <section class="panel registrations-panel">
+      <div class="section-title"><div><p class="eyebrow">LIVE LIST</p><h2>Registered participants</h2></div><span class="count-pill" id="count-pill">0 total</span></div>
+      <div class="list-tools"><p>Successful registrations appear here immediately.</p><input id="search" type="search" placeholder="Search name, email or workshop..." aria-label="Search registrations"></div>
+      <div id="registration-list"><div class="empty-state"><h3>No registrations yet</h3><p>Complete the form above to add the first participant.</p></div></div>
+    </section>
+    <footer>Interactive Workshop Registration · Lab 2</footer>
+  </main>
+</body>
+</html>
